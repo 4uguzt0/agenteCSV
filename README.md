@@ -6,71 +6,90 @@ O agente utiliza a biblioteca LangChain e o modelo de linguagem Gemini do Google
 
 ---
 
-## Como Executar o Projeto
+## Manual de Instalação e Execução
 
-Siga os passos abaixo para rodar o agente em sua máquina local.
+Para garantir uma instalação sem erros, siga os passos abaixo **exatamente na ordem apresentada**.
 
 ### Pré-requisitos
 
-- Python 3.9 ou superior
-- Uma chave de API do Google AI Studio (Gemini)
+- Python 3.9 ou superior instalado.
+- Git instalado.
+- Uma chave de API válida do Google AI Studio (para o modelo Gemini).
 
-### 1. Clonar o Repositório
+### Passo a Passo da Instalação
+
+**Passo 1: Baixar o Projeto e Entrar no Diretório**
+
+Abra seu terminal (Prompt de Comando, PowerShell, ou Terminal) e execute os comandos abaixo para baixar os arquivos do projeto e entrar na pasta correta.
 
 ```bash
-git clone https://github.com/4uguzt0/agenteCSV.git
+git clone [https://github.com/4uguzt0/agenteCSV.git](https://github.com/4uguzt0/agenteCSV.git)
+cd agenteCSV
 ```
+***Importante: Todos os passos seguintes devem ser executados de dentro da pasta `agenteCSV`.***
 
-### 2. Instalar as Dependências
+**Passo 2: Criar e Ativar o Ambiente Virtual**
 
-É altamente recomendado criar um ambiente virtual para isolar as dependências do projeto.
+Vamos criar um ambiente isolado para instalar as bibliotecas do projeto. Isso evita conflitos com outros projetos Python.
 
 ```bash
-# Criar um ambiente virtual (opcional, mas recomendado)
+# Comando para criar a pasta do ambiente virtual chamada "venv"
 python -m venv venv
 
-# Ativar o ambiente virtual
-# No Windows:
-venv\Scripts\activate
-# No macOS/Linux:
-source venv/bin/activate
+# Comando para ATIVAR o ambiente (escolha o do seu sistema operacional)
 
-# Instalar as bibliotecas necessárias
+# No Windows (Prompt de Comando ou PowerShell):
+venv\Scripts\activate
+
+# No macOS ou Linux:
+source venv/bin/activate
+```
+***Verificação de Sucesso:*** *Você saberá que funcionou quando o nome `(venv)` aparecer no início da linha do seu terminal.*
+
+**Passo 3: Instalar as Dependências do Projeto**
+
+Com o ambiente `(venv)` ativo, execute o comando abaixo para instalar todas as bibliotecas necessárias, listadas no arquivo `requirements.txt`.
+
+```bash
 pip install -r requirements.txt
 ```
+***Este comando só funcionará se o Passo 2 foi bem-sucedido e o `(venv)` estiver visível no seu terminal.***
 
-### 3. Configurar a Chave de API
+**Passo 4: Configurar a Chave de API**
 
-Este projeto requer uma chave de API do Google para funcionar. A forma mais segura de configurá-la é através de uma **variável de ambiente**.
+O agente precisa da chave para se comunicar com o Gemini. Configure-a como uma **variável de ambiente** para a sessão atual do seu terminal.
 
-**O script NÃO funcionará se a chave não for configurada.**
+**Aviso:** **NÃO** coloque sua chave diretamente no código. Este método é temporário e seguro para a sessão atual do terminal.
 
-Crie uma variável de ambiente chamada `GOOGLE_API_KEY` com o valor da sua chave.
+```bash
+# No Windows (Prompt de Comando):
+set GOOGLE_API_KEY=COLE_SUA_CHAVE_API_AQUI
 
-**Importante:** **NÃO** coloque sua chave de API diretamente no código ou em qualquer arquivo que será enviado para o GitHub.
+# No macOS/Linux ou Windows (PowerShell):
+export GOOGLE_API_KEY='COLE_SUA_CHAVE_API_AQUI'
+```
 
-### 4. Executar o Agente
+**Passo 5: Executar o Agente**
 
-Com o ambiente virtual ativado e a chave de API configurada, execute o script:
+Se todos os passos anteriores foram concluídos com sucesso, seu agente está pronto para ser executado.
 
 ```bash
 python meu_agente.py
 ```
-
-O programa irá iniciar e você poderá fazer suas perguntas diretamente no terminal.
+O script será iniciado, as mensagens de boas-vindas aparecerão, e você poderá começar a fazer suas perguntas.
 
 ---
 
 ## Exemplos de Perguntas
-
 - Qual é o fornecedor que teve maior montante recebido?
 - Qual item teve maior volume entregue (em quantidade)?
 - Liste os 3 itens mais caros (por valor unitário).
 - Qual o valor total de todas as notas?
 
 ## Tecnologias Utilizadas
-
 - **Python**
 - **LangChain** - Framework para desenvolvimento de aplicações com LLMs.
 - **Google Gemini** - Modelo de Linguagem utilizado como cérebro do agente.
 - **Pandas** - Biblioteca para manipulação e análise dos dados CSV.
+- **Tabulate** - Dependência opcional do Pandas para formatação de tabelas.
+- 
