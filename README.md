@@ -23,8 +23,7 @@ Para garantir uma instalação sem erros, siga os passos abaixo **exatamente na 
 Abra seu terminal (Prompt de Comando, PowerShell, ou Terminal) e execute os comandos abaixo para baixar os arquivos do projeto e entrar na pasta correta.
 
 ```bash
-git clone [https://github.com/4uguzt0/agenteCSV.git](https://github.com/4uguzt0/agenteCSV.git)
-cd agenteCSV
+git clone https://github.com/4uguzt0/agenteCSV.git
 ```
 ***Importante: Todos os passos seguintes devem ser executados de dentro da pasta `agenteCSV`.***
 
@@ -48,7 +47,7 @@ source venv/bin/activate
 
 **Passo 3: Instalar as Dependências do Projeto**
 
-Com o ambiente `(venv)` ativo, execute o comando abaixo para instalar todas as bibliotecas necessárias, listadas no arquivo `requirements.txt`.
+Com o ambiente `(venv)` ativo dentro da pasta do agente execute o comando abaixo para instalar todas as bibliotecas necessárias, listadas no arquivo `requirements.txt`.
 
 ```bash
 pip install -r requirements.txt
