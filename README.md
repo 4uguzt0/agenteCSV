@@ -70,7 +70,7 @@ export GOOGLE_API_KEY='COLE_SUA_CHAVE_API_AQUI'
 
 **Passo 5: Executar o Agente**
 
-Se todos os passos anteriores foram concluídos com sucesso, seu agente está pronto para ser executado.
+Se todos os passos anteriores foram concluídos com sucesso, o agente está pronto para ser executado.
 
 ```bash
 python meu_agente.py
